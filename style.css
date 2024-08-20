@@ -5,7 +5,7 @@
 }
 /*Plano de fundo*/
 body{
-  background:linear-gradient(to top, #2f7762c7, #ffffff41);
+  background:linear-gradient(to top, #2f7762c7, #756e6e);
   min-height: 100vh;
   height: inherit;
   display: flex;
@@ -94,3 +94,9 @@ body{
   transform: scale(0.90);
   background-color: #5f88a0;
 }
+/*animação para apagar a div*/
+.fadeOut {
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+    transform: translateX(100%);
+  }

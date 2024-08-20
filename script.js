@@ -15,8 +15,8 @@ document.getElementById("confirm").addEventListener("click", function () {
     const newList = document.createElement("div")
     newList.style.width = "100%"
     newList.style.height = "80px"
-    newList.style.backgroundColor = "#606d8060"
-    newList.style.borderRadius = "5px"
+    newList.style.backgroundColor = "#606d80"
+    newList.style.borderRadius = "10px"
     newList.style.marginBottom = "6px"
     newList.style.marginTop = "4px"
     newList.style.display = "flex"
@@ -34,33 +34,37 @@ document.getElementById("confirm").addEventListener("click", function () {
     //Tenho que colocar um limite de caracteres ☝️
 
     let del = document.createElement("button")
-    del.style.margin = "20px 20px 0 0"
+    del.style.margin = "25px 25px"
     del.style.width = "35px"
     del.style.height = "35px"
     del.style.borderRadius = "50%"
     del.style.border = "solid 0px"
     del.style.backgroundColor = "#606d8000"
-    //add função de deletar ☝️
 
     let img = document.createElement("img")
-    img.src = "./assets/excluir (1).png"
-    img.style.width = "40px"
-    img.style.height = "40px"
+    img.src = "./assets/cross.png"
+    img.style.width = "30px"
+    img.style.height = "30px"
 
     del.appendChild(img)
     newList.appendChild(title)
     newList.appendChild(del)
 
-    del.addEventListener("mouseover", function () {
-      img.src = "./assets/excluir.png"
-    })
-    del.addEventListener("mouseout", function () {
-      img.src = "./assets/excluir (1).png"
-    })
-    //Não tá funcionando
     del.addEventListener("click", function () {
-      button.style.transform = "scale(2.6)"
+      del.style.transform = "scale(0.80)"
+      setTimeout(function () {
+        del.style.transform = "scale(1)"
+        
+        newList.classList.add("fadeOut")
+        setTimeout(function () {
+          newList.remove()
+        }, 400)
+      }, 200)
+
+     
     })
+
+
 
     document.getElementById("container").appendChild(newList)
   }
