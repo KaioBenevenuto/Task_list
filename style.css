@@ -5,9 +5,8 @@
 }
 /*Plano de fundo*/
 body{
-  background:linear-gradient(to top, #2f7762c7, #756e6e);
+  background:linear-gradient(to top, #00000070, #01376365);
   min-height: 100vh;
-  height: inherit;
   display: flex;
   justify-content: center;
 }
@@ -23,13 +22,14 @@ body{
   margin-top: 120px;
   border: solid 0;
   border-radius: 25px;
-  background-color: rgba(100, 100, 100, 0.253);
+  background-color: rgba(100, 100, 100, 0.541);
   padding: 20px;
-  height: 150px;
+  height: 120px;
   width: 400px;
   position: absolute;
   font-family: "Rubik";
   backdrop-filter: blur(4px);
+  display: none;
 }
 #title{
   width: 100%;
@@ -37,7 +37,7 @@ body{
   border-radius: 5px;
   border: solid 0;
   display: block;
-  margin-top: 10px;
+  margin: 5px 0 15px 0;
   padding: 0 10px;
 }
 #confirm, #cancel{
@@ -45,14 +45,13 @@ body{
   border: solid 0px;
   width: 80px;
   height: 30px;
-  background-color: #84bddd;
-  margin-top: 21px;
-  
+  background-color: #84bddd;  
 }
 #buttons{
   display: flex;
   justify-content: space-between;
   width: 100%;
+  margin-top: 10px;
 }
 #cancel:hover{
   transition: 0.2s;
@@ -85,6 +84,7 @@ body{
   width: 100%;
   display: flex;
   justify-content: center;
+  margin-bottom: 15px;
 }
 #newTaskList:hover{
   transition: 0.2s;
@@ -96,7 +96,7 @@ body{
 }
 /*animação para apagar a div*/
 .fadeOut {
-    transition: transform 0.5s ease, opacity 0.5s ease;
+    transition: transform 0.2s ease, opacity 0.2s ease;
     opacity: 0;
-    transform: translateX(100%);
+    transform: translateX(80%);
   }
