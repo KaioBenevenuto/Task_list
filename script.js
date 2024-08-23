@@ -1,5 +1,5 @@
 document.getElementById("newTaskList").addEventListener("click", function () {
-  document.getElementById("janelaDeTitulo").style.display = "flex"
+  document.getElementById("janelaDeTitulo").style.display = "block"
   document.getElementById("title").focus()
 })
 
@@ -7,7 +7,6 @@ document.getElementById("cancel").addEventListener("click", function () {
   document.getElementById("janelaDeTitulo").style.display = "none"
 })
 
-//Fazer com que quando o título for muito grande pra caber no espaço jogue uma parte dele para baixo 
 function returnTitle(){
   let titulo = document.getElementById("title")
   let tituloDaTaskList = titulo.value
@@ -20,7 +19,7 @@ function addList(tituloDaTaskList){
     const newList = document.createElement("div")
     newList.style.width = "100%"
     newList.style.height = "80px"
-    newList.style.backgroundColor = "#606d80"
+    newList.style.backgroundColor = "#505e80"
     newList.style.borderRadius = "10px"
     newList.style.marginBottom = "8px"
     newList.style.marginTop = "4px"
@@ -28,17 +27,20 @@ function addList(tituloDaTaskList){
 
     let title = document.createElement("div")
     title.style.width = "100%"
-    title.style.height = "80px"
     title.style.borderRadius = "5px"
     title.style.display = "flex"
     title.textContent = tituloDaTaskList
     title.style.padding = "10px"
-    title.style.fontSize = "22px"
+    title.style.fontSize = "20px"
     title.style.fontFamily = "Rubik"
     title.style.alignItems = "center"
+    title.style.overflow = "hidden"  
+    title.style.whiteSpace = 'nowrap'
+    //encontrar um jeito de fazer com que o título suma quando sair do espaço determinado .ok
+    //colocar '...' no final desse título
 
     let del = document.createElement("button")
-    del.style.margin = "25px 25px"
+    del.style.margin = "25px 10px"
     del.style.width = "35px"
     del.style.height = "35px"
     del.style.borderRadius = "50%"
