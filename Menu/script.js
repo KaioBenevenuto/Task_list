@@ -54,6 +54,7 @@ function addList(tituloDaTaskList){
     title.style.borderRadius = "5px"
     title.style.display = "flex"
     title.textContent = tituloDaTaskList
+    localStorage.setItem("pageTitle", tituloDaTaskList)
     title.style.padding = "10px"
     title.style.fontSize = "20px"
     title.style.fontFamily = "Rubik"
