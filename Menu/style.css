@@ -5,7 +5,7 @@
 }
 /*Plano de fundo*/
 body{
-  background:linear-gradient(to top, #00000070, #01376365);
+  background:linear-gradient(to top, #79927d, #aeb18e);
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -25,7 +25,7 @@ body{
   background-color: rgba(100, 100, 100, 0.541);
   padding: 20px;
   height: 120px;
-  width: 400px;
+  width: 350px;
   position: absolute;
   font-family: "Rubik";
   backdrop-filter: blur(4px);
@@ -41,7 +41,7 @@ body{
   padding: 0 10px;
   font-size: 12px;
 }
-/*Tenho que dar um jeito de qubrar ou limitar uma palavra muito grande, tenho que fazer com que a caixa aumente de acordo com a quantidade de texto nela*/
+
 #confirm, #cancel{
   border-radius: 5px;
   border: solid 0px;

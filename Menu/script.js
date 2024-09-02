@@ -14,19 +14,43 @@ function returnTitle(){
   document.getElementById("janelaDeTitulo").style.display = "none"
   return tituloDaTaskList
 }
+
+function salvarDivs() {
+   const divs = document.querySelectorAll(".dynamic-div")
+   const divsData = []
+
+   divs.forEach((div) => {
+     divsData.push(div.querySelector(".title").textContent)
+   })
+
+   localStorage.setItem("divs", JSON.stringify(divsData))
+}
+
+function carregarDivs() {
+  const divsData = JSON.parse(localStorage.getItem("divs"))
+
+  if (divsData) {
+    divsData.forEach((titulo) => {
+      addList(titulo)
+    })
+  }
+}
+
 function addList(tituloDaTaskList){
   if (tituloDaTaskList !== "") {
     const newList = document.createElement("div")
-    newList.style.width = "100%"
+    newList.classList.add("dynamic-div");
+    newList.style.width = "90%"
     newList.style.height = "80px"
-    newList.style.backgroundColor = "#505e80"
+    newList.style.backgroundColor = "#292522"
     newList.style.borderRadius = "10px"
-    newList.style.marginBottom = "8px"
-    newList.style.marginTop = "4px"
+    newList.style.margin = "8px auto 4px"
     newList.style.display = "flex"
 
     let title = document.createElement("div")
-    title.style.width = "100%"
+    title.classList.add("title")
+    title.style.width = "100vh"
+    title.style.color = "#f0f0d8"
     title.style.borderRadius = "5px"
     title.style.display = "flex"
     title.textContent = tituloDaTaskList
@@ -34,10 +58,9 @@ function addList(tituloDaTaskList){
     title.style.fontSize = "20px"
     title.style.fontFamily = "Rubik"
     title.style.alignItems = "center"
-    title.style.overflow = "hidden"  
-    title.style.whiteSpace = 'nowrap'
-    //encontrar um jeito de fazer com que o título suma quando sair do espaço determinado .ok
-    //colocar '...' no final desse título
+    title.style.overflow = "hidden"
+    title.style.whiteSpace = "nowrap"
+    title.textOverflow = "ellipsis"
 
     let del = document.createElement("button")
     del.style.margin = "25px 10px"
@@ -48,7 +71,7 @@ function addList(tituloDaTaskList){
     del.style.backgroundColor = "#606d8000"
 
     let img = document.createElement("img")
-    img.src = "./assets/cross.png"
+    img.src = "../assets/cross.png"
     img.style.width = "30px"
     img.style.height = "30px"
 
@@ -63,11 +86,14 @@ function addList(tituloDaTaskList){
         newList.classList.add("fadeOut")
         setTimeout(function () {
           newList.remove()
+          salvarDivs()
         }, 400)
       }, 200)
     })
 
+    abrirLista(title)
     document.getElementById("container").appendChild(newList)
+    salvarDivs()
   }
 }
 
@@ -80,3 +106,11 @@ document.addEventListener("keydown", function (event) {
   document.getElementById("confirm").click()
   }
 })
+
+function abrirLista(title){
+  title.addEventListener('click', function(){
+    window.location.href='../Lista/index.html';
+  }
+)}
+
+window.addEventListener("load", carregarDivs)
