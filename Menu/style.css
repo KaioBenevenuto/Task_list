@@ -81,6 +81,11 @@ body{
   font-family: "Rubik", sans-serif;
   font-weight: 600;
   background-color: #ffffff00;
+  user-select: none; 
+  -webkit-user-select: none; 
+  -moz-user-select: none; 
+  -ms-user-select: none; 
+  cursor: pointer;
 }
 #centralizar{
   width: 100%;

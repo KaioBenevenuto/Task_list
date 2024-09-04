@@ -7,18 +7,18 @@
 body{
   background-color: #dad6ca;
   padding: 20px 0 0 30px;
+  user-select: none; 
+  -webkit-user-select: none; 
+  -moz-user-select: none; 
+  -ms-user-select: none;
 }
 h1{
  font-family: "Edu VIC WA NT Beginner", cursive;
- user-select: none; 
-  -webkit-user-select: none; 
-  -moz-user-select: none; 
-  -ms-user-select: none; 
 }
 
 /*Caixas de marcação*/
 .checkbox-container {
-  display: flex;
+  display: block;
   align-items: center;
   margin: 20px;
 }
@@ -30,13 +30,28 @@ h1{
   cursor: pointer;
 }
 
-.label-text {
+.input-text {
   font-size: 18px;
   cursor: pointer;
   transition: text-decoration 0.3s ease;
-  user-select: none; 
-  -webkit-user-select: none; 
-  -moz-user-select: none; 
-  -ms-user-select: none; 
   font-family: cursive;
+}
+
+#line{
+background-color: #0000;
+border: none;
+border-radius: 5px;
+font-size: 17px;
+font-family: cursive;
+}
+#line:focus{
+  outline: none;
+  background-color: #fff2;
+}
+
+#edit{
+  background-color: #0000;
+  border:none;
+  cursor:pointer;
+  outline: none;
 }
