@@ -3,7 +3,7 @@
   margin: 0;
   box-sizing: border-box;
 }
-
+/*Background*/
 body{
   background-color: #dad6ca;
   padding: 20px 0 0 30px;
@@ -12,46 +12,53 @@ body{
   -moz-user-select: none; 
   -ms-user-select: none;
 }
+/*Título*/
 h1{
  font-family: "Edu VIC WA NT Beginner", cursive;
 }
-
-/*Caixas de marcação*/
-.checkbox-container {
-  display: block;
+/* Estilo básico das linhas */
+.line {
+  display: flex;
   align-items: center;
-  margin: 20px;
+  margin: 5px 0;
 }
-
-.checkbox {
-  width: 18px;
-  height: 18px;
+/* Oculta os botões de editar/remover quando não estiver com o mouse sobre */
+.line:hover .removerBtn {
+  display: inline-block;
+}
+/* Estilo dos inputs */
+input[type="text"] {
+  margin: 0 10px;
+  padding: 5px;
+  width: 200px;
+}
+/*Botões*/
+button {
+  margin-left: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 20px;
+  outline: none;
+}
+/*Caixa de marcação*/
+#checkbox {
+  width: 15px;
+  height: 15px;
   margin-right: 10px;
   cursor: pointer;
 }
-
-.input-text {
-  font-size: 18px;
-  cursor: pointer;
-  transition: text-decoration 0.3s ease;
-  font-family: cursive;
-}
-
-#line{
+/*Linha de digitação*/
+#text{
 background-color: #0000;
 border: none;
 border-radius: 5px;
 font-size: 17px;
 font-family: cursive;
+cursor: pointer;
+transition: text-decoration 0.3s ease;
+color: black;
 }
-#line:focus{
-  outline: none;
-  background-color: #fff2;
-}
-
-#edit{
-  background-color: #0000;
-  border:none;
-  cursor:pointer;
+#text:focus{
   outline: none;
 }
