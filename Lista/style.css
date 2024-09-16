@@ -20,7 +20,7 @@ h1{
 .line {
   display: flex;
   align-items: center;
-  margin: 5px 0;
+  margin: 5px 0 10px 0;
 }
 /* Oculta os botões de editar/remover quando não estiver com o mouse sobre */
 .line:hover .removerBtn {
@@ -30,26 +30,46 @@ h1{
 input[type="text"] {
   margin: 0 10px;
   padding: 5px;
-  width: 200px;
+  width: 400px;
 }
 /*Botões*/
 button {
   margin-left: 5px;
-  background: none;
+  background-color: transparent;
   border: none;
   cursor: pointer;
   width: 20px;
   outline: none;
+  display: inline-block;
+}
+
+button img {
+  display: block;
+}
+
+.line {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.adicionarBtn,
+.removerBtn {
+  display: inline-block;
+}
+
+.removerBtn {
+  display: none;
 }
 /*Caixa de marcação*/
-#checkbox {
+.checkbox {
   width: 15px;
   height: 15px;
-  margin-right: 10px;
   cursor: pointer;
+  outline: none;
 }
 /*Linha de digitação*/
-#text{
+.text{
 background-color: #0000;
 border: none;
 border-radius: 5px;
@@ -59,6 +79,6 @@ cursor: pointer;
 transition: text-decoration 0.3s ease;
 color: black;
 }
-#text:focus{
+.text:focus{
   outline: none;
 }
