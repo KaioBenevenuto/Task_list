@@ -2,15 +2,15 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-}
-/*Background*/
-body{
-  background-color: #dad6ca;
-  padding: 20px 0 0 30px;
   user-select: none; 
   -webkit-user-select: none; 
   -moz-user-select: none; 
   -ms-user-select: none;
+}
+/*Background*/
+body{
+  background-color: #3a5f6fce;
+  padding: 20px 0 0 30px;
 }
 /*Título*/
 h1{
@@ -20,17 +20,7 @@ h1{
 .line {
   display: flex;
   align-items: center;
-  margin: 5px 0 10px 0;
-}
-/* Oculta os botões de editar/remover quando não estiver com o mouse sobre */
-.line:hover .removerBtn {
-  display: inline-block;
-}
-/* Estilo dos inputs */
-input[type="text"] {
-  margin: 0 10px;
-  padding: 5px;
-  width: 400px;
+  margin: 5px 0 10px 30px;
 }
 /*Botões*/
 button {
@@ -47,37 +37,54 @@ button img {
   display: block;
 }
 
-.line {
-  display: flex;
-  align-items: center;
-  margin-bottom: 8px;
-}
-
-.adicionarBtn,
-.removerBtn {
-  display: inline-block;
-}
-
 .removerBtn {
   display: none;
 }
 /*Caixa de marcação*/
 .checkbox {
-  width: 15px;
-  height: 15px;
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 2px;
+  width: 16px;
+  height: 16px;
   cursor: pointer;
+  background-color: #d5d5d5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   outline: none;
+}
+.checkbox:after{
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  font-size: 22px;
+  content: '\f00c';
+  color:white;
+  display: none;
+}
+.checkbox:hover {
+  background-color: #a5a5a5;
+}
+.checkbox:checked{
+  background-color: #5bcd3e;
+}
+.checkbox:checked::after{
+  display: block;
 }
 /*Linha de digitação*/
 .text{
 background-color: #0000;
 border: none;
-border-radius: 5px;
 font-size: 17px;
 font-family: cursive;
 cursor: pointer;
 transition: text-decoration 0.3s ease;
 color: black;
+margin: 0 10px;
+padding: 5px;
+width: 380px;
+border-bottom: 2px solid black;
+padding-bottom: 0;
 }
 .text:focus{
   outline: none;
